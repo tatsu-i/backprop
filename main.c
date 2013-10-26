@@ -7,6 +7,8 @@ main(int argc, char* argv[]) {
 	srand(1);
 	Init();//重みを+-0.5の乱数で初期化
 	unsigned int i = 0;
+
+	printf("XORの学習\n");
 	printf("======== start ========\n");
 	while(1){
 		Input();
