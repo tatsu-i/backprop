@@ -26,8 +26,6 @@ void Input(){
 	for (i = 0; i < IN; i++) {
 		nt.X[i] = rand()%2;
 	}
-	nt.X[0] = 0, nt.X[1] = 0;//static
-	printf("nt.X[0]=%lf,nt.X[1]=%lf\n", nt.X[0],nt.X[1]);
 	//入力が決まったので教師を作る
 	//nt.XOR
 	if (nt.X[0]==nt.X[1]) {
@@ -93,10 +91,10 @@ double CheckError(){
 	nt.X[0]=0.0, nt.X[1]=0.0, Forward();
 	err += fabs(nt.O[0]-0.0);
 	nt.X[0]=0.0, nt.X[1]=1.0, Forward();
-	err += fabs(nt.O[0]-0.0);
+	err += fabs(nt.O[0]-1.0);
 	nt.X[0]=1.0, nt.X[1]=0.0, Forward();
-	err += fabs(nt.O[0]-0.0);
+	err += fabs(nt.O[0]-1.0);
 	nt.X[0]=1.0, nt.X[1]=1.0, Forward();
 	err += fabs(nt.O[0]-0.0);
-	return 0.0;
+	return err;
 }
